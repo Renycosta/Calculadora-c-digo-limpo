@@ -9,56 +9,19 @@ let secondValue = ""
 let currentOperator = ""
 let currentResult = ""
 
-numberButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        if(currentOperator === ""){
-            if(display.value == currentResult){
-                display.value = ""
-            }
-            firstValue = firstValue + e.target.value
-            display.value = display.value + e.target.value
-            console.log(firstValue)
-        }else{
-            secondValue = secondValue + e.target.value
-            display.value = display.value + e.target.value
-            console.log(secondValue)
-        }
-        
-    })
-})
+function calculate(Num1, Num2, Operator){
+    const Number1 = Number(Num1)
+    const Number2 = Number(Num2)
 
-operatorButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        if(currentOperator === "" && firstValue !== ""){
-            currentOperator = currentOperator + e.target.value
-            display.value = display.value + currentOperator
-            console.log(currentOperator)
-        }else{
-            return
-        }
-    })
-})
+    return operations(Number1, Number2, Operator);
+}
 
-equalsButton.addEventListener("click", (e) => {
-    if(currentOperator == "+"){
-        currentResult = +firstValue + +secondValue
-    }else if(currentOperator == "-"){
-        currentResult = +firstValue - +secondValue
-    }else if(currentOperator == "*"){
-        currentResult = +firstValue * +secondValue
-    }else if(currentOperator == "/"){
-        currentResult = +firstValue / +secondValue
-    }else{
-        return
-    }
-    console.log(currentResult)
-    reset()
-    display.value = currentResult
-})
-
-clearButton.addEventListener("click", (e) => {
-    reset()
-})
+function operations(Number1, Number2, Operator){
+    if (Operator == '+') return Number1 + Number2
+    else if (Operator == '-') return Number1 + Number2
+    else if (Operator == '*') return Number1 + Number2 
+    else if (Operator == '/') return Number1 + Number2 
+}
 
 function reset(){
     firstValue = ""
@@ -66,3 +29,53 @@ function reset(){
     currentOperator = ""
     display.value = ""
 }
+
+function handleNumberClick(buttonValue){
+    if (display.value === String(display.value === firstValue && !currentOperator)) {
+        display.value = "";
+    }
+
+    if (!currentOperator) {
+        firstValue += buttonValue;
+        display.value += buttonValue;
+    } else {
+        secondValue += buttonValue;
+        display.value += buttonValue;
+    }
+}
+
+function handleOperatorClick(buttonValue){
+    if (firstValue && !currentOperator) {
+        currentOperator = buttonValue;
+        display.value += currentOperator;
+    }
+}
+
+function handleEqualsClick(){
+    if (!firstValue || !secondValue || !currentOperator) return;
+
+    const result = calculate(firstValue, secondValue, currentOperator);
+
+    display.value = result;
+}
+
+numberButtons.forEach((btn) => {
+    button.addEventListener("click", (e) => {
+        handleNumberClick(e.target.value)
+    });
+})
+
+operatorButtons.forEach((btn) => {
+    button.addEventListener("click", (e) => {
+        handleOperatorClick(e.target.value)
+    });
+})
+
+equalsButton.addEventListener("click", (e) => {
+    handleEqualsClick()
+})
+
+clearButton.addEventListener("click", (e) => {
+    reset()
+})
+
