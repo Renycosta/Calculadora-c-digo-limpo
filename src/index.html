@@ -10,31 +10,31 @@
 <body>
   <main class="flex justify-center items-center h-screen">
     <div class="flex flex-col bg-[#3C3FB5] p-7 rounded-lg">
-      <input type="text" placeholder="--------------------" id="calc" class="bg-[#DDE7DD] rounded-lg w-104 h-16 p-4 text-right text-black font-bold text-5xl mb-6" readonly>
+      <input type="text" placeholder="--------------------" id="display-input" class="bg-[#DDE7DD] rounded-lg w-104 h-16 p-4 text-right text-black font-bold text-5xl mb-6" readonly>
       <div class="flex flex-col bg-[#E8E7EA] p-4 rounded-lg">
         <div class="flex justify-between mb-4">
-          <input type="button" value="7" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer"/>
-          <input type="button" value="8" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="9" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="/" id="sinal" class="text-4xl font-bold py-4 px-7  bg-white text-[#3C3FB5]  rounded-[50%] shadow-lg cursor-pointer">
+          <input type="button" value="7" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number"/>
+          <input type="button" value="8" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number">
+          <input type="button" value="9" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number">
+          <input type="button" value="/" class="text-4xl font-bold py-4 px-7  bg-white text-[#3C3FB5]  rounded-[50%] shadow-lg cursor-pointer btn-operator">
         </div>
         <div class="flex justify-between mb-4">
-          <input type="button" value="4" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="5" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="6" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="*" id="sinal" class="text-4xl font-bold py-4 px-6.5  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer">
+          <input type="button" value="4" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number">
+          <input type="button" value="5" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number">
+          <input type="button" value="6" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number">
+          <input type="button" value="*" class="text-4xl font-bold py-4 px-6.5  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer btn-operator">
         </div>
         <div class="flex justify-between mb-4">
-          <input type="button" value="3" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="2" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="1" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="-" id="sinal" class="text-4xl font-bold py-4 px-7  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer">
+          <input type="button" value="3" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number">
+          <input type="button" value="2" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number">
+          <input type="button" value="1" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number">
+          <input type="button" value="-" class="text-4xl font-bold py-4 px-7  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer btn-operator">
         </div>
         <div class="flex justify-between">
-          <input type="button" value="0" id="num" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="C" id="C" class="text-4xl font-bold py-4 px-6.75  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="=" id="resul" class="text-4xl font-bold py-4 px-5.75  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer">
-          <input type="button" value="+" id="sinal" class="text-4xl font-bold py-4 px-5.75  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer">
+          <input type="button" value="0" class="text-4xl font-bold py-4 px-7 bg-[#3C3FB5] text-white rounded-[50%] shadow-lg cursor-pointer btn-number">
+          <input type="button" value="C" id="btn-clear" class="text-4xl font-bold py-4 px-6.75  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer">
+          <input type="button" value="=" id="btn-equals" class="text-4xl font-bold py-4 px-5.75  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer">
+          <input type="button" value="+" class="text-4xl font-bold py-4 px-5.75  bg-white text-[#3C3FB5] rounded-[50%] shadow-lg cursor-pointer btn-operator">
         </div>
       </div>
     </div>

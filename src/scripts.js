@@ -1,67 +1,68 @@
-const num = document.querySelectorAll("#num")
-const sinal = document.querySelectorAll("#sinal")
-const resul = document.querySelector("#resul")
-const sC = document.querySelector("#C")
-const calc = document.querySelector("#calc")
+const numberButtons = document.querySelectorAll(".btn-number")
+const operatorButtons = document.querySelectorAll(".btn-operator")
+const equalsButton = document.querySelector("#btn-equals")
+const clearButton = document.querySelector("#btn-clear")
+const display = document.querySelector("#display-input")
 
-let val1 = ""
-let val2 = ""
-num.forEach((btn) => {
+let firstValue = ""
+let secondValue = ""
+let currentOperator = ""
+let currentResult = ""
+
+numberButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        if(sin === ""){
-            if(calc.value == total){
-                calc.value = ""
+        if(currentOperator === ""){
+            if(display.value == currentResult){
+                display.value = ""
             }
-            val1 = val1 + e.target.value
-            calc.value = calc.value + e.target.value
-            console.log(val1)
+            firstValue = firstValue + e.target.value
+            display.value = display.value + e.target.value
+            console.log(firstValue)
         }else{
-            val2 = val2 + e.target.value
-            calc.value = calc.value + e.target.value
-            console.log(val2)
+            secondValue = secondValue + e.target.value
+            display.value = display.value + e.target.value
+            console.log(secondValue)
         }
         
     })
 })
 
-let sin = ""
-sinal.forEach((btn) => {
+operatorButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        if(sin === "" && val1 !== ""){
-            sin = sin + e.target.value
-            calc.value = calc.value + sin
-            console.log(sin)
+        if(currentOperator === "" && firstValue !== ""){
+            currentOperator = currentOperator + e.target.value
+            display.value = display.value + currentOperator
+            console.log(currentOperator)
         }else{
             return
         }
     })
 })
 
-let total = ""
-resul.addEventListener("click", (e) => {
-    if(sin == "+"){
-        total = +val1 + +val2
-    }else if(sin == "-"){
-        total = +val1 - +val2
-    }else if(sin == "*"){
-        total = +val1 * +val2
-    }else if(sin == "/"){
-        total = +val1 / +val2
+equalsButton.addEventListener("click", (e) => {
+    if(currentOperator == "+"){
+        currentResult = +firstValue + +secondValue
+    }else if(currentOperator == "-"){
+        currentResult = +firstValue - +secondValue
+    }else if(currentOperator == "*"){
+        currentResult = +firstValue * +secondValue
+    }else if(currentOperator == "/"){
+        currentResult = +firstValue / +secondValue
     }else{
         return
     }
-    console.log(total)
+    console.log(currentResult)
     reset()
-    calc.value = total
+    display.value = currentResult
 })
 
-sC.addEventListener("click", (e) => {
+clearButton.addEventListener("click", (e) => {
     reset()
 })
 
 function reset(){
-    val1 = ""
-    val2 = ""
-    sin = ""
-    calc.value = ""
+    firstValue = ""
+    secondValue = ""
+    currentOperator = ""
+    display.value = ""
 }
