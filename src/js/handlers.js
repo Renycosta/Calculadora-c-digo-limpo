@@ -1,4 +1,4 @@
-import { calculate } from "./calculator.js";
+import { calculate } from "./calculator.js"
 
 const display = document.querySelector("#display-input")
 
@@ -16,31 +16,31 @@ export function reset(){
 
 export function handleNumberClick(buttonValue){
     if (display.value === String(display.value === firstValue && !currentOperator)) {
-        display.value = "";
+        display.value = ""
     }
 
     if (!currentOperator) {
-        firstValue += buttonValue;
-        display.value += buttonValue;
+        firstValue += buttonValue
+        display.value += buttonValue
     } else {
-        secondValue += buttonValue;
-        display.value += buttonValue;
+        secondValue += buttonValue
+        display.value += buttonValue
     }
 }
 
 export function handleOperatorClick(buttonValue){
     if (firstValue && !currentOperator) {
-        currentOperator = buttonValue;
-        display.value += currentOperator;
+        currentOperator = buttonValue
+        display.value += currentOperator
     }
 }
 
 export function handleEqualsClick(){
-    if (!firstValue || !secondValue || !currentOperator) return;
+    if (!firstValue || !secondValue || !currentOperator) return
 
-    const result = calculate(firstValue, secondValue, currentOperator);
+    const result = calculate(firstValue, secondValue, currentOperator)
 
-    display.value = result;
-    secondValue = "";
-    currentOperator = "";
+    display.value = result
+    secondValue = ""
+    currentOperator = ""
 }
