@@ -1,3 +1,10 @@
+import { 
+    handleNumberClick, 
+    handleOperatorClick, 
+    handleEqualsClick, 
+    reset 
+} from "./handlers.js";
+
 const numberButtons = document.querySelectorAll(".btn-number")
 const operatorButtons = document.querySelectorAll(".btn-operator")
 const equalsButton = document.querySelector("#btn-equals")
